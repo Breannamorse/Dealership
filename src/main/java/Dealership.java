@@ -6,9 +6,9 @@ public class Dealership {
     private String address;
     private String phone;
 
-    private ArrayList<Vehicle> inventory;
+    private static ArrayList<Vehicle> inventory;
 
-    public Dealership(String name, String address, String phone) {
+    public Dealership(String name, String address, String phone, ArrayList<Vehicle> inventory) {
         this.name = name;
         this.address = address;
         this.phone = phone;
@@ -66,9 +66,19 @@ public class Dealership {
     public List<Vehicle> getAllVehicles() {
     return inventory;
     }
-    public void addVehicle(Vehicle vehicle){
+    public static void addVehicle(Vehicle vehicle){
     inventory.add(vehicle);
     }
+
+    public static void setInventory(ArrayList<Vehicle> inventory) {
+        Dealership.inventory = inventory;
+    }
+
+    public static ArrayList<Vehicle> getInventory() {
+        return inventory;
+
+    }
+
     public void removeVehicle(Vehicle vehicle){
 
     }
